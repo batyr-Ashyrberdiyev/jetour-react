@@ -4,10 +4,10 @@ import Footer from "./components/layout/footer";
 
 function App() {
   return (
-    <div className="flex flex-col gap-10 h-screen">
+    <div className="flex flex-col gap-10 min-h-screen ">
       <Header />
 
-      <div className="flex-auto">
+      <div className="flex-auto overflow-x-hidden">
         <Outlet />
       </div>
 

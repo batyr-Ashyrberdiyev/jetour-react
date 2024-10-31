@@ -7,6 +7,10 @@
   line-height: 1.5;
   font-weight: 400;
 
+  box-sizing: border-box;
+
+  line-height: 130%;
+
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -19,11 +23,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
   text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
@@ -133,5 +133,11 @@ button:focus-visible {
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  @layer components {
+    .home-btn {
+      @apply py-4 px-7 text-[18px] rounded-[8px] font-semibold;
+    }
   }
 }
