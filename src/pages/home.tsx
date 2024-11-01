@@ -1,9 +1,11 @@
-import HomeHero from "../components/shared/home-hero";
+import HomeModels from '../components/shared/home-models';
+import HomeSlider from '../components/shared/home-slider';
 
 const Home = () => {
   return (
     <main>
-      <HomeHero />
+      <HomeSlider />
+      <HomeModels />
     </main>
   );
 };
