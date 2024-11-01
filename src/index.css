@@ -135,6 +135,14 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 
+  button {
+    @apply outline-none;
+  }
+
+  button:hover {
+    @apply !outline-none;
+  }
+
   @layer components {
     .home-btn {
       @apply py-4 px-7 text-[18px] rounded-[8px] font-semibold;
