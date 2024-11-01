@@ -1,17 +1,22 @@
-import { useEffect, useState } from 'react';
-import { Carousel, CarouselApi, CarouselContent, CarouselItem } from '../ui/carousel';
-import Bullets from './bullets';
-import Autoplay from 'embla-carousel-autoplay';
+import { useEffect, useState } from "react";
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+} from "../ui/carousel";
+import Bullets from "./bullets";
+import Autoplay from "embla-carousel-autoplay";
 
 const sliderData = [
   {
-    img: '/images/home-slider/1.png',
+    img: "/images/home-slider/1.png",
   },
   {
-    img: '/images/home-slider/3.png',
+    img: "/images/home-slider/3.png",
   },
   {
-    img: '/images/home-slider/1.png',
+    img: "/images/home-slider/1.png",
   },
 ];
 
@@ -30,7 +35,7 @@ const HomeSlider = () => {
 
     setCurrent(api.selectedScrollSnap());
 
-    api.on('select', () => {
+    api.on("select", () => {
       setCurrent(api.selectedScrollSnap());
     });
   }, [api]);
@@ -67,11 +72,15 @@ const HomeSlider = () => {
           Autoplay({
             delay: 6000,
           }),
-        ]}>
+        ]}
+      >
         <CarouselContent className="relative">
           {sliderData.map((item, i) => (
             <CarouselItem key={i} className="max-w-[1920px] h-screen">
-              <img src={item.img} className="size-full object-cover object-bottom" />
+              <img
+                src={item.img}
+                className="size-full object-cover object-bottom"
+              />
             </CarouselItem>
           ))}
         </CarouselContent>
