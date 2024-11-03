@@ -1,17 +1,55 @@
-import { motion } from 'framer-motion';
-import { cn } from '../../lib/utils';
+import * as React from "react";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { cn } from "../../lib/utils";
+import { Plus } from "lucide-react";
 
-interface Props {
-  className?: string;
-  onActive: (str: string) => void;
-}
+const Accordion = AccordionPrimitive.Root;
 
-const Accordion = ({ className }: Props) => {
-  return (
-    <motion.div initial={{}} animate={{}} className={cn(className, '')}>
-      <h3 className="text-[18px] font-bold leading-[150%]">Katalog nirde görüp bolýar?</h3>
-    </motion.div>
-  );
-};
+const AccordionItem = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
+>(({ className, ...props }, ref) => (
+  <AccordionPrimitive.Item
+    ref={ref}
+    className={cn("border-b border-white/50", className)}
+    {...props}
+  />
+));
+AccordionItem.displayName = "AccordionItem";
 
-export default Accordion;
+const AccordionTrigger = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
+>(({ className, children, ...props }, ref) => (
+  <AccordionPrimitive.Header className="flex">
+    <AccordionPrimitive.Trigger
+      ref={ref}
+      className={cn(
+        "flex flex-1 gap-10 items-center justify-between pb-3 text-sm font-bold text-[18px] transition-all ease-[cubic-bezier(0.95,0.05,0.795,0.035)] text-left [&[data-state=open]>svg]:rotate-180",
+        className
+      )}
+      {...props}
+    >
+      {children}
+      <Plus className="size-5 shrink-0 text-white transition-transform duration-200" />
+    </AccordionPrimitive.Trigger>
+  </AccordionPrimitive.Header>
+));
+AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
+
+const AccordionContent = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
+>(({ className, children, ...props }, ref) => (
+  <AccordionPrimitive.Content
+    ref={ref}
+    className="overflow-hidden text-[#D1D1D1] ease-[cubic-bezier(0.95,0.05,0.795,0.035)] text-[16px] font-medium data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    {...props}
+  >
+    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+  </AccordionPrimitive.Content>
+));
+
+AccordionContent.displayName = AccordionPrimitive.Content.displayName;
+
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
