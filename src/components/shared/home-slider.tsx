@@ -5,8 +5,8 @@ import {
   CarouselContent,
   CarouselItem,
 } from "../ui/carousel";
-import Bullets from "./bullets";
 import Autoplay, { AutoplayType } from "embla-carousel-autoplay";
+import { Bullets } from "./bullets";
 
 const sliderData = [
   {
