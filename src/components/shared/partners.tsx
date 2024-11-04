@@ -1,7 +1,3 @@
-import React from "react";
-
-const Partners = () => {
+export const Partners = () => {
   return <div>Partners</div>;
 };
-
-export default Partners;

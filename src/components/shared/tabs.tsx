@@ -19,7 +19,7 @@ interface Props {
   setActive: (val: number) => void;
 }
 
-const Tabs = ({ active, setActive }: Props) => {
+export const Tabs = ({ active, setActive }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [indicatorStyles, setIndicatorStyles] = useState({
     width: 140,
@@ -78,5 +78,3 @@ const Tabs = ({ active, setActive }: Props) => {
     </div>
   );
 };
-
-export default Tabs;

@@ -1,20 +1,26 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Minus, Plus } from "lucide-react";
-import { useState } from "react";
 
 interface Props {
   question: string;
   answer: string;
+  active: boolean;
+  id: number;
+  setActive: (id: number) => void;
 }
 
-const CustomAccordion = ({ question, answer }: Props) => {
-  const [active, setActive] = useState(false);
-
+const CustomAccordion = ({
+  active,
+  question,
+  answer,
+  setActive,
+  id,
+}: Props) => {
   return (
     <motion.div
       animate={active ? { paddingBottom: 25 } : {}}
       transition={{ ease: [0.55, 0, 0.1, 1] }}
-      onClick={() => setActive(!active)}
+      onClick={() => setActive(id)}
       className="border-b border-white/50 overflow-hidden"
     >
       <div className="flex items-center relative cursor-pointer justify-between">
@@ -47,7 +53,7 @@ const CustomAccordion = ({ question, answer }: Props) => {
             exit={{ height: 0, paddingBottom: 0 }}
             transition={{ ease: [0.55, 0, 0.1, 1], duration: 0.2 }}
           >
-            <h4 className="text-[16px] font-medium D1D1D1">{answer}</h4>
+            <h4 className="text-[16px] font-medium text-[#D1D1D1]">{answer}</h4>
           </motion.div>
         )}
       </AnimatePresence>

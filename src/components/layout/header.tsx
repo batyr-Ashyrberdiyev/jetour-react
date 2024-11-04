@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import LangMenu from "../shared/lang-menu";
 import { cn } from "../../lib/utils";
+import { LangMenu } from "../shared";
 
 const headerLinks = [
   {

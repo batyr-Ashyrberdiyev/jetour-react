@@ -1,6 +1,6 @@
 import { ChevronDown } from "lucide-react";
 
-const LangMenu = () => {
+export const LangMenu = () => {
   return (
     <>
       <div className="h-9 px-2 bg-[#323135] cursor-pointer flex gap-2 justify-center rounded-[12px] items-center text-BLACK_300">
@@ -10,5 +10,3 @@ const LangMenu = () => {
     </>
   );
 };
-
-export default LangMenu;
