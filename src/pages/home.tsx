@@ -1,6 +1,4 @@
-import HomeFaq from '../components/shared/home-faq';
-import HomeModels from '../components/shared/home-models';
-import HomeSlider from '../components/shared/home-slider';
+import { HomeFaq, HomeModels, HomeSlider } from "../components/shared";
 
 const Home = () => {
   return (

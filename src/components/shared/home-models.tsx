@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Tabs from "./tabs";
 import { Button } from "../ui/button";
+import { Tabs } from "./tabs";
 
 const models = [
   {
@@ -14,7 +14,7 @@ const models = [
   },
 ];
 
-const HomeModels = () => {
+export const HomeModels = () => {
   const [active, setActive] = useState(1);
 
   return (
@@ -38,5 +38,3 @@ const HomeModels = () => {
     </section>
   );
 };
-
-export default HomeModels;

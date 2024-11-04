@@ -34,7 +34,7 @@ const questions = [
   },
 ];
 
-const HomeFaq = () => {
+export const HomeFaq = () => {
   return (
     <section className="pt-6 pb-8 bg-[#242126]">
       <div className="flex flex-col gap-[42px] max-w-[1326px] mx-auto text-[#F6F6F6]">
@@ -59,5 +59,3 @@ const HomeFaq = () => {
     </section>
   );
 };
-
-export default HomeFaq;
