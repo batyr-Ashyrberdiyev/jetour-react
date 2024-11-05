@@ -38,7 +38,7 @@ export const HomeFaq = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="pt-6 pb-8 min-h-[400px] bg-[#242126]">
+    <section className="pt-6 pb-8 min-h-[450px] bg-[#242126]">
       <div className="flex flex-col gap-[42px] max-w-[1326px] mx-auto text-[#F6F6F6]">
         <h1 className="leading-[210%] font-semibold text-[40px]">
           Köp soralýan soraglar
