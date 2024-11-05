@@ -1,3 +1,5 @@
+export { Slider } from "./slider";
+export { HomePartners } from "./home-partners";
 export { HomeSlider } from "./home-slider";
 export { LangMenu } from "./lang-menu";
 export { Tabs } from "./tabs";
