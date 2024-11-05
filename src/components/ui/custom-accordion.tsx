@@ -21,10 +21,10 @@ const CustomAccordion = ({
       animate={active ? { paddingBottom: 25 } : {}}
       transition={{ ease: [0.55, 0, 0.1, 1] }}
       onClick={() => setActive(id)}
-      className="border-b border-white/50 overflow-hidden"
+      className="border-b border-white/20 overflow-hidden"
     >
       <div className="flex items-center relative cursor-pointer justify-between">
-        <h3 className="pb-3 font-bold text-[18px] leading-[130%]">
+        <h3 className="pb-6 font-bold text-[18px] leading-[130%]">
           {question}
         </h3>
 
