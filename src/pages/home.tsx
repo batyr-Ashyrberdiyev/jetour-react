@@ -1,9 +1,4 @@
-import {
-  HomeFaq,
-  HomeModels,
-  HomePartners,
-  HomeSlider,
-} from "../components/shared";
+import { HomeBenefits, HomeFaq, HomeModels, HomePartners, HomeSlider } from '../components/shared';
 
 const Home = () => {
   return (
@@ -12,6 +7,7 @@ const Home = () => {
       <HomeModels />
       <HomeFaq />
       <HomePartners />
+      <HomeBenefits />
     </main>
   );
 };
