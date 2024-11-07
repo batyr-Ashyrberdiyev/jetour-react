@@ -1,47 +1,23 @@
-import { useEffect, useState } from "react";
-import {
-  Carousel,
-  CarouselApi,
-  CarouselContent,
-  CarouselItem,
-} from "../ui/carousel";
-import Autoplay, { AutoplayType } from "embla-carousel-autoplay";
-import { Bullets } from "./bullets";
+import { useEffect, useState } from 'react';
+import { Carousel, CarouselApi, CarouselContent, CarouselItem } from '../ui/carousel';
+import Autoplay, { AutoplayType } from 'embla-carousel-autoplay';
+import { Bullets } from './bullets';
 
 const sliderData = [
   {
-    img: "/images/home-slider/1.png",
+    img: '/images/home-slider/1.png',
   },
   {
-    img: "/images/home-slider/3.png",
+    img: '/images/home-slider/3.png',
   },
   {
-    img: "/images/home-slider/1.png",
+    img: '/images/home-slider/1.png',
   },
 ];
 
 export const HomeSlider = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-
-  // useEffect(() => {
-  //   if (!emblaApi) return;
-
-  //   const autoplay: any = emblaApi.plugins().autoplay;
-
-  //   const handleSelect = () => {
-  //     autoplay.stop();
-  //     setTimeout(() => {
-  //       autoplay.play();
-  //     }, autoplayOptions.delay);
-  //   };
-
-  //   emblaApi.on("select", handleSelect);
-
-  //   return () => {
-  //     emblaApi.off("select", handleSelect);
-  //   };
-  // }, [emblaApi]);
 
   useEffect(() => {
     if (!api) {
@@ -59,10 +35,10 @@ export const HomeSlider = () => {
 
     setCurrent(api.selectedScrollSnap());
 
-    api.on("select", handleSelect);
+    api.on('select', handleSelect);
 
     return () => {
-      api.off("select", handleSelect);
+      api.off('select', handleSelect);
     };
   }, [api]);
 
@@ -98,15 +74,11 @@ export const HomeSlider = () => {
           Autoplay({
             delay: 5000,
           }),
-        ]}
-      >
+        ]}>
         <CarouselContent className="relative">
           {sliderData.map((item, i) => (
             <CarouselItem key={i} className="max-w-[1920px] h-screen">
-              <img
-                src={item.img}
-                className="size-full object-cover object-bottom"
-              />
+              <img src={item.img} className="size-full object-cover object-bottom" />
             </CarouselItem>
           ))}
         </CarouselContent>
