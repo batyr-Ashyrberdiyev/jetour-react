@@ -148,4 +148,10 @@ button:focus-visible {
       @apply py-4 px-7 text-[18px] rounded-[8px] font-semibold;
     }
   }
+
+  @layer utilities {
+    .container {
+      @apply max-w-[1326px] mx-auto;
+    }
+  }
 }
